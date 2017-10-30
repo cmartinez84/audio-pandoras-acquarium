@@ -1,6 +1,6 @@
 
 
-# Pandoras Acquarium
+# Pandoras Aquarium
 
 #### By Chris Martinez
 
@@ -10,7 +10,7 @@ This high art concept explores the temporal fragility of human expression.
 This project uses the Web Audio API and HTML canvas to turn voice into ripples on the canvas. Be sure and either mute your sound or use headphones to avoid high screeching feedback. Try whispering. Try shouting. Try changing pitch. Try chanting tori's name.
 
 
-https://cmartinez84.github.io/audio-pandoras-acquarium
+https://cmartinez84.github.io/audio-pandoras-aquarium
 
 ## Known Bugs
 _none

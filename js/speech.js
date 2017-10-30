@@ -24,6 +24,7 @@ recognition.addEventListener('result', e=>{
     }
     if(lower.includes('ripple') || lower.includes('ripples')){
       ///from ripple.js
+      console.log("ripple");
       rippleRad +=2;
     }
     // console.log(e.results);
