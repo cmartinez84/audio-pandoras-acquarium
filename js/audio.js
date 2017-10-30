@@ -1,20 +1,22 @@
 /////________________________________________________________
 //Audio Context
-var audio = document.getElementById('audio');
+
 
 // document.body.appendChild(audio);
+var AudioContext = window.AudioContext || window.webkitAudioContext;
 var audioCtx = new AudioContext();
 var analyser = audioCtx.createAnalyser();
 analyser.smoothingTimeConstant = .05;
 var filter = audioCtx.createBiquadFilter();
 var frequencyData;
-var voiceNode;
-
+// var voiceNode;
+var musicNode;
 
 /////______________________soundsources__________________________________
 /// must load in this order
 
 window.addEventListener('load', function(e) {
+  // loadEasterEgg();
   loadVoiceNode();
 }, false);
 
@@ -25,16 +27,29 @@ function loadVoiceNode(){
       navigator.mediaDevices.getUserMedia ({audio: true, video: true})
       .then(function(stream) {
           voiceNode = audioCtx.createMediaStreamSource(stream);
-          connectNodes();
+          loadEasterEgg();
         });
   }
 }
+
+function loadEasterEgg(){
+  var audio = document.getElementById('audio');
+  audio.src = 'audio/pandora.mp3';
+  audio.controls = false;
+  audio.autoplay = false;
+  // audio.play();
+  musicNode = audioCtx.createMediaElementSource(audio);
+  connectNodes();
+}
+
 function connectNodes(){
   voiceNode.connect(analyser);
+  musicNode.connect(analyser);
   analyser.connect(audioCtx.destination);
-  frequencyData = new Uint8Array(1000);
-  // console.log(frequencyData);
+  frequencyData = new Uint8Array(1024);
 }
+
+
 
 
   /////________________________________________________________
@@ -72,4 +87,4 @@ function start(){
   renderFrame();
 }
 
-start();
+// start();
