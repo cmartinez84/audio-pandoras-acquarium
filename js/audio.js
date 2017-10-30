@@ -87,4 +87,4 @@ function start(){
   renderFrame();
 }
 
-// start();
+start();

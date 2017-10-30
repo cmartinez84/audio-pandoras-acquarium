@@ -22,6 +22,10 @@ recognition.addEventListener('result', e=>{
     if(lower.includes('tori' || lower.includes("pandora's acquarium"))){
       audio.play();
     }
+    if(lower.includes('ripple') || lower.includes('ripples')){
+      ///from ripple.js
+      rippleRad +=2;
+    }
     // console.log(e.results);
 
     // console.log(transcript);
