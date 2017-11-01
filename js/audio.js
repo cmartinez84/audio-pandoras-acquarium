@@ -44,8 +44,8 @@ function loadEasterEgg(){
 
 function connectNodes(){
   voiceNode.connect(analyser);
-  musicNode.connect(analyser);
-  analyser.connect(audioCtx.destination);
+  musicNode.connect(audioCtx.destination);
+  // analyser.connect(audioCtx.destination);
   frequencyData = new Uint8Array(1024);
 }
 
